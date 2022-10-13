@@ -166,3 +166,103 @@
 ## Технический бюджет
 
 *`todo` Количество полигонов, физических объектов, коллизий, источников света, фичи и т.д.*
+
+### Рендер
+
+- Мешы
+- 2d текстуры, направленные всё время на камеру
+- Материалы
+	- Pbr materials
+		- Metallic, Roughness, Diffuse
+		- Emission
+		- Textures (normal, diffuse, roughness, metallic)
+	- Alpha blending
+	- Custom shader materials
+		- For fragment shader
+- Освещение
+	- Ambient light
+	- Point light
+	- Directional light
+	- Spot light
+	- Environment maps (cubemaps)
+	- Deferred shading
+	- Normal maps affection
+	- Bloom
+	- Shadows
+- Instancing
+	- GPU instancing
+	- Particle system
+- Post processing
+	- HDR
+	- Gamma correction
+- Stencil (как дополнительный материал)
+
+### Особенности движка
+
+- Observer pattern
+- State pattern
+- Timer
+- RayCasting
+- Динамическое добавление сущностей
+	- *Maybe* подгрузка в отдельном потоке
+- Environment сущности
+- Анимации
+	- 3d-editor экспорт
+	- Skeletal animations
+	- *Maybe* анимации как интерполяция абсолютно любых параметров
+- *Maybe* Character bodies (impl KinematicBody, `is_on_ground()`, `is_on_wall()` и пр.)
+- Particles
+- Проигрыватели звука, зонированый звук
+- Слои и маски для физики и рендера
+
+### Физика и коллизии
+
+- Collision ares
+- Регулировка скорости протекания процессов, в т.ч. их остановка
+- Static bodies
+- Kinematic bodies
+- *Maybe* Rigid bodies (партиклы, пропсы)
+
+### GUI
+
+- In game UI
+	- Bars (maybe via shaders)
+	- Ammo
+	- Skills
+- Menu GUI
+	- Buttons
+	- Labels
+	- Container logic (или table logic)
+	- *Maybe* sliders
+	- *Maybe* checkbox
+
+### AI
+
+- Path finding
+	- Collision avoidance
+	- Path maps
+	- Agents
+- Game director logic
+- State machine
+
+### Ввод
+
+- Поддержка мыши
+	- Не падать при отсутствии мыши
+	- Нажать на кнопку (колёсико вверх и внизу - две разные копки)
+	- Отпустить кнопку
+	- Нажата ли кнопка
+	- Перемещение курсора
+	- Изменение типа курсора
+- Поддержка клавиатуры
+	- Не падать при отсутствии клавиатуры
+	- Нажать на клавишу
+	- Отпустить клавишу
+	- Нажата ли кнопка
+- Именованные события ввода (пробел можно задать как "Jump", например)
+
+### Звуки
+- Проигрывание звуков
+	- Регулировка громкости
+	- Повторять / не повторять
+- Подгрузка звуков
